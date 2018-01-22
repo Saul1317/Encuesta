@@ -16,32 +16,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Inicio"
+            android:name=".LoginActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".segunda"
+        <activity android:name=".Inicio"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".Tercera"
+        <activity android:name=".segunda"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".cuarta"
+        <activity android:name=".Tercera"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".quinta"
+        <activity android:name=".cuarta"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".sexta"
+        <activity android:name=".quinta"
             android:screenOrientation="landscape" />
-        <activity
-            android:name=".Final"
-            android:screenOrientation="landscape"></activity>
+        <activity android:name=".sexta"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Final"
+            android:screenOrientation="landscape" >
+        </activity>
     </application>
 
 </manifest>
