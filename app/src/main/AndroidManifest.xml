@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
@@ -20,24 +21,33 @@
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Inicio"
+        <activity
+            android:name=".Inicio"
             android:screenOrientation="landscape" />
-        <activity android:name=".segunda"
+        <activity
+            android:name=".segunda"
             android:screenOrientation="landscape" />
-        <activity android:name=".Tercera"
+        <activity
+            android:name=".Tercera"
             android:screenOrientation="landscape" />
-        <activity android:name=".cuarta"
+        <activity
+            android:name=".cuarta"
             android:screenOrientation="landscape" />
-        <activity android:name=".quinta"
+        <activity
+            android:name=".quinta"
             android:screenOrientation="landscape" />
-        <activity android:name=".sexta"
+        <activity
+            android:name=".sexta"
             android:screenOrientation="landscape" />
-        <activity android:name=".Final"
-            android:screenOrientation="landscape" >
-        </activity>
+        <activity
+            android:name=".Final"
+            android:screenOrientation="landscape" />
+        <activity android:name=".FacturaActivity" />
+        <activity android:name=".SplashActivity" />
     </application>
 
 </manifest>
