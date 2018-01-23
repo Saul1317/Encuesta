@@ -61,16 +61,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setPreferencias(){
-        String sociedad = getSociedadPref();
-        String sucursal = getSucursalPref();
-
-    }
-
-    private String getSociedadPref(){
-        return prs.getString("sociedad",null);
-    }
-
-    private String getSucursalPref(){
-        return prs.getString("sucursal",null);
+        String sociedad = MetodosSharedPreference.getSociedadPref(prs);
+        String sucursal = MetodosSharedPreference.getSucursalPref(prs);
     }
 }
