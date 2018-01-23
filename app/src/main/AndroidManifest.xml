@@ -49,8 +49,7 @@
         <activity
             android:name=".Final"
             android:screenOrientation="landscape" />
-        <activity android:name=".FacturaActivity" />
-
+        <activity android:name=".FacturaActivity"
+            android:screenOrientation="landscape"/>
     </application>
-
 </manifest>
