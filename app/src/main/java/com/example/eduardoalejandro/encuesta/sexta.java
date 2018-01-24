@@ -16,6 +16,7 @@ public class sexta extends AppCompatActivity {
     ImageButton ibtn21, ibtn22, ibtn23;
     private TextView txt_respuesta1,txt_respuesta2,txt_respuesta3;
     private String respuestaHttp;
+    int contador;
     Vibrator rr;
 
     @Override
@@ -30,6 +31,9 @@ public class sexta extends AppCompatActivity {
         ibtn21 =(ImageButton) findViewById(R.id.ibtn21);
         ibtn22 =(ImageButton) findViewById(R.id.ibtn22);
         ibtn23 =(ImageButton) findViewById(R.id.ibtn23);
+
+        contador = getIntent().getIntExtra("contador",0);
+        Toast.makeText(sexta.this, String.valueOf(contador), Toast.LENGTH_SHORT).show();
 
         //Agregar
         txt_respuesta1 = (TextView) findViewById(R.id.respuesta_muy_probable);
@@ -102,9 +106,16 @@ public class sexta extends AppCompatActivity {
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(sexta.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(sexta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(sexta.this,Final.class);
-                    startActivity(i);
+                    if (contador==2){
+                        Intent i = new Intent(sexta.this,SecretActivity.class);
+                        startActivity(i);
+                    }
+                    else{
+                        Toast.makeText(sexta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(sexta.this,Final.class);
+                        i.putExtra("contador",contador+1);
+                        startActivity(i);
+                    }
                 }
             }
         });

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sucursales_autlan">
+
+     <item>CARRETERA MORELIA</item>
+     <item>LOPEZ MATEOS</item>
+     <item>COCULA</item>
+     <item>CIUDAD GUZMAN</item>
+     <item>PATRIA</item>
+     <item>CIRCUNVALACION</item>
+     <item>EL SALTO</item>
+     <item>TESISTAN</item>
+     <item>AUTLAN</item>
+
+ </string-array>
+
+
+</resources>

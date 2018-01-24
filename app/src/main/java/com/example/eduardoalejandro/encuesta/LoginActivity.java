@@ -14,18 +14,31 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
+
+    /******variables para spinners*********/
     Spinner spinner_sucursal, spinner_local;
+
+    /*******variable para boton**********/
     Button boton_ingresar;
+
+    /******* variable para preferencias*****/
     private SharedPreferences prs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        /****ejecuta identificadores *****/
         Identificadores();
+
+
         prs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.spinner_sucursal, android.R.layout.simple_spinner_item);
+
+
+        /****adapatador para spinner sociedad*****/
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.sociedades, android.R.layout.simple_spinner_item);
         spinner_sucursal.setAdapter(adapter);
         spinner_local.setAdapter(adapter);
 
@@ -48,18 +61,21 @@ public class LoginActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    /******* metodo identificadores ********/
     private void Identificadores(){
         spinner_sucursal = (Spinner) findViewById(R.id.spinner_sucursal);
         spinner_local = (Spinner) findViewById(R.id.spinner_local);
         boton_ingresar= (Button) findViewById(R.id.boton_ingresar);
     }
 
+    /******* metodo para mostrar actividad ********/
     private void NuevaActividad(){
-        Intent i = new Intent(LoginActivity.this, FacturaActivity.class);
+        Intent i = new Intent(LoginActivity.this, Inicio.class);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
     }
 
+    /******* metodo para setear sucural y sociedad ********/
     private void setPreferencias(){
         String sociedad = MetodosSharedPreference.getSociedadPref(prs);
         String sucursal = MetodosSharedPreference.getSucursalPref(prs);

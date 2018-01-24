@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string-array name="sucursales_lacienega">
+<item>ACEROS ECONOMICOS</item>
+<item>TATEPOSCO</item>
+<item>TONALA</item>
+<item>JAUJA</item>
+<item>LOPEZ CIENEGA</item>
+<item>CONSIGNACION BOD07</item>
+ </string-array>
+
+
+</resources>

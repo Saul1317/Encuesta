@@ -16,6 +16,7 @@ public class segunda extends AppCompatActivity {
     ImageButton ibtn6, ibtn7, ibtn8;
     private TextView txt_respuesta_Si,txt_respuesta_No, txt_respuesta_Parcial;
     private String respuestaHttp;
+    int contador;
     Vibrator rr;
 
     @Override
@@ -30,6 +31,8 @@ public class segunda extends AppCompatActivity {
         ibtn6 =(ImageButton) findViewById(R.id.ibtn6);
         ibtn7 =(ImageButton) findViewById(R.id.ibtn7);
         ibtn8 =(ImageButton) findViewById(R.id.ibtn8);
+
+        Toast.makeText(segunda.this, String.valueOf(contador), Toast.LENGTH_SHORT).show();
 
         //Agregar
         txt_respuesta_Si = (TextView) findViewById(R.id.respuesta_Si);
@@ -56,6 +59,7 @@ public class segunda extends AppCompatActivity {
                 }else{
                     Toast.makeText(segunda.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(segunda.this,Tercera.class);
+                    i.putExtra("contador",contador);
                     startActivity(i);
                 }
             }
@@ -69,9 +73,16 @@ public class segunda extends AppCompatActivity {
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(segunda.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(segunda.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(segunda.this,Tercera.class);
-                    startActivity(i);
+                    if (contador==2){
+                        Intent i = new Intent(segunda.this,SecretActivity.class);
+                        startActivity(i);
+                    }
+                    else{
+                        Toast.makeText(segunda.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(segunda.this,Tercera.class);
+                        i.putExtra("contador",contador+1);
+                        startActivity(i);
+                    }
                 }
             }
         });
@@ -86,6 +97,7 @@ public class segunda extends AppCompatActivity {
                 }else{
                     Toast.makeText(segunda.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(segunda.this,Tercera.class);
+                    i.putExtra("contador",contador);
                     startActivity(i);
                 }
             }

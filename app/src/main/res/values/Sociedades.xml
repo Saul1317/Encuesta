@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sociedades">
+
+        <item>ARANDAS</item>
+        <item>AUTLAN</item>
+        <item>AYOTLAN</item>
+        <item>BAJIO</item>
+        <item>DAO</item>
+        <item>GAO</item>
+        <item>IXTAPA</item>
+        <item>LA_CIENEGA</item>
+        <item>LAMINAS_DEL_NORTE</item>
+        <item>LOS_ALTOS</item>
+        <item>MUCHA_LAMINA</item>
+        <item>PEGA</item>
+        <item>SAABSA</item>
+        <item>TEPA</item>
+        <item>TIJUANA</item>
+
+    </string-array>
+
+</resources>

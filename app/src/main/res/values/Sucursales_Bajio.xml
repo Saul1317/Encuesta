@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string-array name="sucursales_bajio">
+<item>AOB ATOTONILCO</item>
+<item>AOB EL 14</item>
+<item>AOB LAGOS DE MORENO</item>
+<item>PATRIA</item>
+<item>CIRCUNVALACION</item>
+<item>ZAPOTLANEJO</item>
+<item>EL MIRADOR</item>
+
+ </string-array>
+
+
+</resources>

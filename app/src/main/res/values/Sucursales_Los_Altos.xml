@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sucursales_los_altos">
+
+<item>LOS ALTOS</item>
+<item>JESUS MARIA</item>
+<item>SAN FRANCISCO</item>
+<item>ALTOS ARANDAS</item>
+
+ </string-array>
+
+
+</resources>

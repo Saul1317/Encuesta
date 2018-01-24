@@ -16,6 +16,7 @@ public class quinta extends AppCompatActivity {
     ImageButton ibtn16, ibtn17, ibtn18, ibtn19, ibtn20;
     private TextView txt_respuesta1,txt_respuesta2,txt_respuesta3,txt_respuesta4,txt_respuesta5;
     private String respuestaHttp;
+    int contador;
     Vibrator rr;
 
     @Override
@@ -32,6 +33,9 @@ public class quinta extends AppCompatActivity {
         ibtn18 =(ImageButton) findViewById(R.id.ibtn18);
         ibtn19 =(ImageButton) findViewById(R.id.ibtn19);
         ibtn20 =(ImageButton) findViewById(R.id.ibtn20);
+
+        contador = getIntent().getIntExtra("contador",0);
+        Toast.makeText(quinta.this, String.valueOf(contador), Toast.LENGTH_SHORT).show();
 
         //Agregar
         txt_respuesta1 = (TextView) findViewById(R.id.respuesta_mucho_mejor);
@@ -62,6 +66,7 @@ public class quinta extends AppCompatActivity {
                 }else{
                     Toast.makeText(quinta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(quinta.this,sexta.class);
+                    i.putExtra("contador",contador);
                     startActivity(i);
                 }
             }
@@ -78,6 +83,7 @@ public class quinta extends AppCompatActivity {
                 }else{
                     Toast.makeText(quinta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(quinta.this,sexta.class);
+                    i.putExtra("contador",contador);
                     startActivity(i);
                 }
             }
@@ -94,6 +100,7 @@ public class quinta extends AppCompatActivity {
                 }else{
                     Toast.makeText(quinta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(quinta.this,sexta.class);
+                    i.putExtra("contador",contador);
                     startActivity(i);
                 }
             }
@@ -107,9 +114,16 @@ public class quinta extends AppCompatActivity {
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(quinta.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(quinta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(quinta.this,sexta.class);
-                    startActivity(i);
+                    if (contador==2){
+                        Intent i = new Intent(quinta.this,SecretActivity.class);
+                        startActivity(i);
+                    }
+                    else{
+                        Toast.makeText(quinta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(quinta.this,sexta.class);
+                        i.putExtra("contador",contador+1);
+                        startActivity(i);
+                    }
                 }
             }
         });
@@ -125,6 +139,7 @@ public class quinta extends AppCompatActivity {
                 }else{
                     Toast.makeText(quinta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(quinta.this,sexta.class);
+                    i.putExtra("contador",contador);
                     startActivity(i);
                 }
             }
@@ -141,6 +156,7 @@ public class quinta extends AppCompatActivity {
                 }else{
                     Toast.makeText(quinta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(quinta.this,sexta.class);
+                    i.putExtra("contador",contador);
                     startActivity(i);
                 }
             }

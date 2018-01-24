@@ -16,6 +16,7 @@ public class cuarta extends AppCompatActivity {
     ImageButton ibtn, ibtn13, ibtn14, ibtn15;
     private TextView txt_respuesta_muy_satifecho2,txt_respuesta_satifecho2, txt_respuesta_insatisfecho2, txt_respuesta_muy_insatisfecho2;
     private String respuestaHttp;
+    int contador;
     Vibrator rr;
 
     @Override
@@ -32,6 +33,9 @@ public class cuarta extends AppCompatActivity {
         ibtn14 =(ImageButton) findViewById(R.id.ibtn14);
         ibtn15 =(ImageButton) findViewById(R.id.ibtn15);
 
+        //Toma los datos pasados por la instancia
+        contador = getIntent().getIntExtra("contador",0);
+        Toast.makeText(cuarta.this, String.valueOf(contador), Toast.LENGTH_SHORT).show();
         //Agregar
         txt_respuesta_muy_satifecho2 = (TextView) findViewById(R.id.respuesta_muy_satifecho2);
         txt_respuesta_satifecho2 = (TextView) findViewById(R.id.respuesta_satifecho2);
@@ -59,6 +63,7 @@ public class cuarta extends AppCompatActivity {
                 }else{
                     Toast.makeText(cuarta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(cuarta.this,quinta.class);
+                    i.putExtra("contador",contador);
                     startActivity(i);
                 }
             }
@@ -75,6 +80,7 @@ public class cuarta extends AppCompatActivity {
                 }else{
                     Toast.makeText(cuarta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(cuarta.this,quinta.class);
+                    i.putExtra("contador",contador);
                     startActivity(i);
                 }
             }
@@ -91,10 +97,13 @@ public class cuarta extends AppCompatActivity {
                 }else{
                     Toast.makeText(cuarta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(cuarta.this,quinta.class);
+                    i.putExtra("contador",contador);
                     startActivity(i);
                 }
             }
         });
+
+        //Boton Negativo
         ibtn15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,9 +114,16 @@ public class cuarta extends AppCompatActivity {
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(cuarta.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(cuarta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(cuarta.this,quinta.class);
-                    startActivity(i);
+                    if (contador==2){
+                        Intent i = new Intent(cuarta.this,SecretActivity.class);
+                        startActivity(i);
+                    }
+                    else{
+                        Toast.makeText(cuarta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(cuarta.this,quinta.class);
+                        i.putExtra("contador",contador+1);
+                        startActivity(i);
+                    }
                 }
             }
         });

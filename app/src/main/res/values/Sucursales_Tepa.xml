@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string-array name="sucursales_tepa">
+     <item>TEPA - PRIMERAS</item>
+     <item>TEPA - SEGUNDAS</item>
+     <item>TEPA - ALMACEN 5</item>
+
+</string-array>
+
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string-array name="sucursales_laminas_del_norte">
+<item>COMERCIALIZADORA LN</item>
+<item>MAQUILA LN</item>
+<item>COMERCIALIZADORA LS/PM</item>
+<item>MAQUILA LS/PM</item>
+ </string-array>
+
+
+</resources>

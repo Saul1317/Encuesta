@@ -2,6 +2,7 @@ package com.example.eduardoalejandro.encuesta;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.StrictMode;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,10 @@ public class Inicio extends AppCompatActivity {
     private String respuestaHttp;
     Vibrator rr;
 
+
+    /******* variable para preferencias*****/
+    private SharedPreferences prs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +31,9 @@ public class Inicio extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
         StrictMode.enableDefaults();
         setContentView(R.layout.activity_inicio);
+
+
+
 
         ibtn1 =(ImageButton) findViewById(R.id.ibtn1);
         ibtn2 =(ImageButton) findViewById(R.id.ibtn2);
@@ -46,6 +54,8 @@ public class Inicio extends AppCompatActivity {
         final String txt_respuesta4 = txt_respuesta_cada_15_dias.getText().toString();
         final String txt_respuesta5 = txt_respuesta_mensual.getText().toString();
 
+        prs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
+
         final Httppost httppost = new Httppost();
         rr = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         //Hasta Aquí
@@ -62,7 +72,7 @@ public class Inicio extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P1", txt_respuesta1, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P1", txt_respuesta1, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(Inicio.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
@@ -78,7 +88,7 @@ public class Inicio extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P1", txt_respuesta2, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P1", txt_respuesta2, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(Inicio.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
@@ -95,7 +105,7 @@ public class Inicio extends AppCompatActivity {
             public void onClick(View view) {
 
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P1", txt_respuesta3, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P1", txt_respuesta3, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(Inicio.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
@@ -112,7 +122,7 @@ public class Inicio extends AppCompatActivity {
 
 
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P1", txt_respuesta4, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P1", txt_respuesta4, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(Inicio.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
@@ -129,7 +139,7 @@ public class Inicio extends AppCompatActivity {
             public void onClick(View view) {
 
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P1", txt_respuesta5, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P1", txt_respuesta5, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(Inicio.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();

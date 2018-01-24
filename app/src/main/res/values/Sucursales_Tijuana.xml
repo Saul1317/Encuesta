@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sucursales_tijuana">
+
+        <item>CEDI TIJUANA</item>
+        <item>5 Y 10</item>
+        <item>JARDIN DORADO</item>
+        <item>MEXICALI</item>
+        <item>ENSENADA</item>
+        <item>TECATE</item>
+
+    </string-array>
+
+
+</resources>

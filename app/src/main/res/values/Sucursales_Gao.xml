@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string-array name="sucursales_gao">
+
+<item>GAO MATRIZ</item>
+<item>GAO EXPRES</item>
+<item>GAO CENTRO DE SERVICIO</item>
+<item>GAO MAQUILA</item>
+ </string-array>
+
+
+</resources>

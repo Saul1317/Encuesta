@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string-array name="sucursales_pacifico">
+
+     <item>TEPIC</item>
+     <item>AJIJIC</item>
+     <item>ACATLAN</item>
+     <item>AOP CHAPALA</item>
+     <item>AOP AUTLAN</item>
+     <item>AOP IXTLAN</item>
+     <item>HERMOSILLO</item>
+     <item>AEROPUERTO</item>
+</string-array>
+
+
+</resources>

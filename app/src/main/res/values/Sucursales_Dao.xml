@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string-array name="sucursales_dao">
+<item>DAO MATRIZ</item>
+<item>CAOSA</item>
+<item>SAHUAYO</item>
+<item>PONCITLAN</item>
+<item>LA BARCA</item>
+<item>MADERO</item>
+<item>MORELIA</item>
+<item>LA PIEDAD</item>
+<item>LAZARO CARDENAS</item>
+<item>ECONOMICOS</item>
+
+ </string-array>
+
+
+</resources>

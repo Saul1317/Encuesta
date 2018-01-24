@@ -14,7 +14,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         prs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
         Intent intentLogin = new Intent(SplashActivity.this, LoginActivity.class);
-        Intent intentFactura = new Intent(SplashActivity.this, FacturaActivity.class);
+        Intent intentFactura = new Intent(SplashActivity.this, Inicio.class);
 
         if (!TextUtils.isEmpty(MetodosSharedPreference.getSociedadPref(prs))
                 && !TextUtils.isEmpty(MetodosSharedPreference.getSociedadPref(prs))){

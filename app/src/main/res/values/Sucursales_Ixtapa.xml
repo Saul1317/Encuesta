@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string-array name="sucursales_ixtapa">
+<item>CEDI IXTAPA</item>
+<item>VALLARTA</item>
+<item>PITILLAL</item>
+<item>BUCERIAS</item>
+ </string-array>
+
+
+</resources>
