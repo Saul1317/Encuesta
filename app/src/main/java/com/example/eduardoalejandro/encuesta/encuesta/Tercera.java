@@ -1,15 +1,18 @@
-package com.example.eduardoalejandro.encuesta;
+package com.example.eduardoalejandro.encuesta.encuesta;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.os.StrictMode;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.eduardoalejandro.encuesta.R;
 
 public class Tercera extends AppCompatActivity {
 
@@ -18,6 +21,10 @@ public class Tercera extends AppCompatActivity {
     private TextView txt_respuesta_muy_satifecho,txt_respuesta_satifecho, txt_respuesta_insatisfecho, txt_respuesta_muy_insatisfecho;
     private String respuestaHttp;
     Vibrator rr;
+
+    /******* variable para preferencias*****/
+    private SharedPreferences prs;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +37,6 @@ public class Tercera extends AppCompatActivity {
 
         //Toma los datos pasados por la instancia
         contador = getIntent().getIntExtra("contador",0);
-        Toast.makeText(Tercera.this, String.valueOf(contador), Toast.LENGTH_SHORT).show();
 
         ibtn9 =(ImageButton) findViewById(R.id.ibtn9);
         ibtn10 =(ImageButton) findViewById(R.id.ibtn10);
@@ -48,6 +54,9 @@ public class Tercera extends AppCompatActivity {
         final String txt_respuesta11 = txt_respuesta_insatisfecho.getText().toString();
         final String txt_respuesta12 = txt_respuesta_muy_insatisfecho.getText().toString();
 
+
+        prs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
+
         final Httppost httppost = new Httppost();
         rr = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         //Hasta Aquí
@@ -56,7 +65,7 @@ public class Tercera extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P3", txt_respuesta9, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P3", txt_respuesta9, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(Tercera.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
@@ -73,7 +82,7 @@ public class Tercera extends AppCompatActivity {
             public void onClick(View view) {
 
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P3", txt_respuesta10, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P3", txt_respuesta10, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(Tercera.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
@@ -90,7 +99,7 @@ public class Tercera extends AppCompatActivity {
             public void onClick(View view) {
 
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P3", txt_respuesta11, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P3", txt_respuesta11, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(Tercera.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
@@ -108,21 +117,15 @@ public class Tercera extends AppCompatActivity {
 
                 //Boton negativo
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P3", txt_respuesta12, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P3", txt_respuesta12, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(Tercera.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
                 }else{
-                    if (contador==2){
-                        Intent i = new Intent(Tercera.this,SecretActivity.class);
-                        startActivity(i);
-                    }
-                    else{
                         Toast.makeText(Tercera.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(Tercera.this,cuarta.class);
                         i.putExtra("contador",contador+1);
                         startActivity(i);
-                    }
                 }
             }
         });

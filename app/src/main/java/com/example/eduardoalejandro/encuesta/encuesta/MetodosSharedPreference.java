@@ -1,4 +1,4 @@
-package com.example.eduardoalejandro.encuesta;
+package com.example.eduardoalejandro.encuesta.encuesta;
 
 import android.content.SharedPreferences;
 

@@ -1,16 +1,18 @@
-package com.example.eduardoalejandro.encuesta;
+package com.example.eduardoalejandro.encuesta.encuesta;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.os.StrictMode;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.eduardoalejandro.encuesta.R;
 
 public class Inicio extends AppCompatActivity {
 

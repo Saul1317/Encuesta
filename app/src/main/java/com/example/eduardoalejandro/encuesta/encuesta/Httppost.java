@@ -1,7 +1,4 @@
-package com.example.eduardoalejandro.encuesta;
-
-import android.content.Context;
-import android.net.ConnectivityManager;
+package com.example.eduardoalejandro.encuesta.encuesta;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

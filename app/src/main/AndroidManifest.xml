@@ -15,40 +15,5 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/Splash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".Inicio"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".segunda"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".Tercera"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".cuarta"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".quinta"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".sexta"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".Final"
-            android:screenOrientation="landscape" />
-        <activity android:name=".SecretActivity"></activity>
-    </application>
+        android:theme="@style/AppTheme"></application>
 </manifest>

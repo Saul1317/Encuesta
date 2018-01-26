@@ -1,15 +1,18 @@
-package com.example.eduardoalejandro.encuesta;
+package com.example.eduardoalejandro.encuesta.encuesta;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.os.StrictMode;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.eduardoalejandro.encuesta.R;
 
 public class quinta extends AppCompatActivity {
 
@@ -18,6 +21,9 @@ public class quinta extends AppCompatActivity {
     private String respuestaHttp;
     int contador;
     Vibrator rr;
+
+    /******* variable para preferencias*****/
+    private SharedPreferences prs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +41,6 @@ public class quinta extends AppCompatActivity {
         ibtn20 =(ImageButton) findViewById(R.id.ibtn20);
 
         contador = getIntent().getIntExtra("contador",0);
-        Toast.makeText(quinta.this, String.valueOf(contador), Toast.LENGTH_SHORT).show();
-
         //Agregar
         txt_respuesta1 = (TextView) findViewById(R.id.respuesta_mucho_mejor);
         txt_respuesta2 = (TextView) findViewById(R.id.respuesta_mejor);
@@ -50,6 +54,8 @@ public class quinta extends AppCompatActivity {
         final String txt_respuesta19 = txt_respuesta4.getText().toString();
         final String txt_respuesta20 = txt_respuesta5.getText().toString();
 
+        prs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
+
         final Httppost httppost = new Httppost();
         rr = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         //Hasta Aquí
@@ -59,7 +65,7 @@ public class quinta extends AppCompatActivity {
             public void onClick(View view) {
 
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P5", txt_respuesta16, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P5", txt_respuesta16, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(quinta.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
@@ -76,7 +82,7 @@ public class quinta extends AppCompatActivity {
             public void onClick(View view) {
 
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P5", txt_respuesta17, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P5", txt_respuesta17, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(quinta.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
@@ -93,7 +99,7 @@ public class quinta extends AppCompatActivity {
             public void onClick(View view) {
 
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P5", txt_respuesta18, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P5", txt_respuesta18, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(quinta.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
@@ -109,21 +115,15 @@ public class quinta extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                respuestaHttp = httppost.post("P5", txt_respuesta19, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P5", txt_respuesta19, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(quinta.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
                 }else{
-                    if (contador==2){
-                        Intent i = new Intent(quinta.this,SecretActivity.class);
-                        startActivity(i);
-                    }
-                    else{
                         Toast.makeText(quinta.this, "Se envio correctamente la respuesta", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(quinta.this,sexta.class);
                         i.putExtra("contador",contador+1);
                         startActivity(i);
-                    }
                 }
             }
         });
@@ -132,7 +132,7 @@ public class quinta extends AppCompatActivity {
             public void onClick(View view) {
 
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P5", txt_respuesta20, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P5", txt_respuesta20, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(quinta.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
@@ -149,7 +149,7 @@ public class quinta extends AppCompatActivity {
             public void onClick(View view) {
 
                 rr.vibrate(50);
-                respuestaHttp = httppost.post("P5", txt_respuesta16, "Matriz", "Movil", "-");
+                respuestaHttp = httppost.post("P5", txt_respuesta16, MetodosSharedPreference.getSucursalPref(prs), "Movil", "-");
 
                 if (respuestaHttp.equals("ERROR")){
                     Toast.makeText(quinta.this, "Error al mandar los datos", Toast.LENGTH_SHORT).show();
